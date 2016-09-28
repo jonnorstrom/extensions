@@ -21,12 +21,11 @@ function traverseDown(node) {
 		case 9:  // Document
 		case 11: // Document fragment
 			child = node.firstChild;
-			while ( child )
-			{
+			while ( child ) {
 				nextSib = child.nextSibling;
 				traverseDown(child);
 				child = nextSib;
-			}
+			} 
 			break;
 
 		case 3: // Text node
@@ -42,9 +41,7 @@ function replacementTime(textNode) {
 
 function megaRegex(text) {
   text = text.replace(/Trump/g, "Drumpf");
-  text = text.replace(/trump/g, "drumpf");
-	text = text.replace(/TRUMP/g, "DRUMPF");
-  text = text.replace(/\bMake America Great Again\b/g, "Make Donald Drumpf Again");
-  text = text.replace(/\bMake America Great Again!\b/g, "Make Donald Drumpf Again!");
+  text = text.replace(/TRUMP/g, "DRUMPF");
+  text = text.replace(/Make America Great Again/g, "Make Donald Drumpf Again");
   return text
 }
